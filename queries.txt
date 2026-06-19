@@ -1,0 +1,130 @@
+
+
+Query 1- Count Total Records
+	Select count (*) AS Total_Records from Netflix;
+
+Query 2: Look at the Data
+	SELECT *
+	FROM Netflix
+	LIMIT 5;
+
+Query 3: Movies vs TV Shows
+	SELECT type,COUNT(*) AS total
+	FROM Netflix
+	GROUP BY type;
+
+Query 4: Ratings Distribution
+	SELECT rating,COUNT(*) AS total
+	FROM Netflix
+	GROUP BY rating
+	ORDER BY total DESC;
+
+Query 5: Content by Country
+	SELECT country,
+       COUNT(*) AS total_titles
+	FROM Netflix
+	WHERE country IS NOT NULL
+	GROUP BY country
+	ORDER BY total_titles DESC;
+	
+Query 6: Content Released Each Year
+	SELECT release_year,
+       COUNT(*) AS total_titles
+	FROM Netflix
+	GROUP BY release_year
+	ORDER BY release_year DESC;
+
+Query 7: Movies Only
+	SELECT *
+	FROM Netflix
+	WHERE type = 'Movie';
+
+Query 8: Content Released after 2015
+	SELECT title, release_year
+	FROM Netflix
+	WHERE release_year > 2015;
+
+Query 9: Top 5 Most Recent Titles
+	SELECT title,release_year
+	FROM Netflix
+	ORDER BY release_year DESC
+	LIMIT 5;
+
+Query 10: Using CASE WHEN
+	SELECT title,release_year,CASE
+           WHEN release_year >= 2020 THEN 'Recent'
+           ELSE 'Old'
+       END AS category
+	FROM Netflix;
+
+Query 11:Which ratings have more than 5 titles?
+	SELECT rating, COUNT(*) AS total
+	FROM Netflix
+	GROUP BY rating
+	HAVING COUNT(*) > 5
+	ORDER BY total DESC;
+
+Query 12: Average Release Year by Type
+	SELECT type, AVG(release_year) AS avg_year
+	FROM Netflix
+	GROUP BY type;
+
+Query 13: Oldest Content
+	SELECT title, release_year
+	FROM Netflix
+	ORDER BY release_year
+	LIMIT 5;
+
+Query 14: Find Titles Containing "Love"
+	SELECT title
+	FROM Netflix
+	WHERE title LIKE '%Love%';
+
+Query 15: Top Genres
+	SELECT listed_in, COUNT(*) AS total
+	FROM Netflix
+	GROUP BY listed_in
+	ORDER BY total DESC
+	LIMIT 10;
+
+Query 16: Newest Year by Type
+	SELECT type, MAX(release_year) AS newest_year
+	FROM Netflix
+	GROUP BY type;
+
+Query 17: Oldest Year by Type
+	SELECT type, MIN(release_year) AS oldest_year
+	FROM Netflix
+	GROUP BY type;
+
+Query 18: Count Recent vs Old Content
+	SELEC CASE
+	    WHEN release_year >= 2020 THEN 'Recent'
+	    ELSE 'Old'
+	END AS category,
+	COUNT(*) AS total
+	FROM Netflix
+	GROUP BY category;
+
+Query 19: Top Countries After 2020
+	SELECT country,
+       COUNT(*) AS total
+	FROM Netflix
+	WHERE release_year >= 2020
+	AND country IS NOT NULL
+	GROUP BY country
+	ORDER BY total DESC;
+
+Query 20: Count Titles by Decade
+	SELECT CASE
+	WHEN release_year BETWEEN 1990 AND 1999 THEN '1990s'
+	WHEN release_year BETWEEN 2000 AND 2009 THEN '2000s'
+	WHEN release_year BETWEEN 2010 AND 2019 THEN '2010s'
+	ELSE '2020s'
+	END AS decade,
+	COUNT(*) AS total
+	FROM Netflix
+	GROUP BY decade;
+
+
+

@@ -1,0 +1,104 @@
+Query 1: Total Records
+Purpose:Find total number of records in dataset.
+Result:100
+
+Query 2: Preview Data
+Purpose: Understand the structure of the dataset.
+Important columns noticed:
+- type
+- rating
+- country
+- release_year
+
+Query 3: Movies vs TV Shows
+Purpose: Count content by type.
+Result: Movie = 56
+	TV Show = 44
+
+Query 4: Ratings Distribution
+Purpose: Which rating appears most often?
+Result: TV- Ma 33 
+
+Query 5: Content by Country
+Purpose:Which country contributes the most content?
+Result:United States 17
+
+Query 6:Content Released Each Year
+Purpose: Which year has the highest number of titles? 
+Result: 2021 53
+
+Query 7: Movies Only
+Purpose:How many movies are there?
+Result:56
+Insight:This query filters the dataset to display only movies. It helps in performing movie-specific analysis.
+
+Query 8: Content Released after 2015
+Purpose: shows the content released after 2015 with usage of comparison operator
+
+Query 9: Top 5 Most Recent Titles
+Purpose: Shows top 5 movies of 2021
+
+Query 10: Using CASE WHEN
+Purpose: It helps it to categorise title as recent and old
+
+Query 11: Which ratings have more than 5 titles?
+WHERE: remove movies before grouping
+HAVING: remove rating groups having less than 5 titles
+HAVING is used after GROUP BY
+Insight:TV-MA is the dominant rating category,suggesting Netflix content is primarily targeted towards mature audiences.
+
+Query 12: Average Release Year by Type
+Purpose: Are Movies newer or TV Shows newer on average?
+Result: Movie	 2011.75
+	TV Show	 2019.3863636363637
+Insight:TV Shows are significantly newer on average than Movies, suggesting Netflix has invested heavily in TV Show production in recent years.
+
+Query 13: Oldest Content 
+Purpose: What are the oldest titles?
+Insight:The query helps understand the historical range of content available on Netflix.
+
+Query 14: Find Titles Containing "Love"
+Result: Love on the Spectrum
+
+Query 15: Top Genres
+Purpose:Which genres dominate Netflix?
+Result: Top genre: Action & Adventure, Anime Features, International Movies 12
+
+Query 16: Newest Year by Type
+Purpose: What is the latest release year for Movies and TV Shows?
+Result: 2021
+
+Query 17: Oldest Year by Type
+Purpose: What is the latest release year for Movies and TV Shows?
+Result: Movies:	  1975
+	TV Shows: 1994
+	
+Query 18: Count Recent vs Old Content
+Purpose: What percentage of Netflix content is recent?
+Result: Old  39
+	Recent 61
+
+Query 19: Top Countries After 2020
+Purpose: Who is producing the newest content?
+Result: United States 8
+
+Query 20: Count Titles by Decade
+Result: 1990s 5
+	2000s 11
+	2010s 19
+	2020s 65
+Insight: Genre analysis helps understand the type of content Netflix focuses on. The most frequent genres indicate audience preferences and platform strategy.
+
+FINAL FINDINGS
+
+1. Total records analyzed: 100.
+2. Movies account for 56% of the content while TV Shows account for 44%.
+3. TV-MA is the most common rating category.
+4. United States contributes the highest number of titles.
+5. Content production peaked in 2021.
+6. TV Shows are newer on average than Movies.
+7. Netflix content is largely concentrated in recent years.
+8. Mature audience content dominates the platform.
+
+
+
